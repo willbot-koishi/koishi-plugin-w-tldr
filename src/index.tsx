@@ -42,6 +42,7 @@ export function apply(ctx: Context, config: Config) {
       // 检查环境
       const { platform, guildId } = session
       if (! guildId) return '请在群聊中使用此命令'
+      if (! ctx.messageDb.isTracked(session)) return '当前群组未启用消息记录功能'
 
       // 处理消息数
       count ??= config.defaultCount
