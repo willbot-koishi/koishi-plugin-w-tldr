@@ -96,6 +96,7 @@ export function apply(ctx: Context, config: Config) {
 
       // 准备总结消息
       if (! messages.length) return '没有找到相关消息'
+      const actualCount = messages.length
       session.send(`正在总结${session.quote ? '所选消息开始的' : '最近' } ${messages.length} 条消息……`)
 
       // 拼接聊天记录文本
